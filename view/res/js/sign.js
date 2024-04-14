@@ -62,7 +62,11 @@ auth.signInWithEmailAndPassword(email, password)
   .then((cred) => {
     // Handle successful login
     console.log('LOGIN WAS A SUCCESS ', cred);
-    
+     alert('Login successful. Welcome to Baraka App.'); // Alert the user about login failure
+    if(email=='stephenndungu96@gmail.com'){
+      window.location.href = "https://baraka.onrender.com/tres"; 
+    }
+window.location.href = "https://baraka.onrender.com/user"; // Redirect to home if URL not permitted   
     // Make another HTTP request after successful login
     fetch('auth/login', {
       method: 'POST',
@@ -83,7 +87,7 @@ auth.signInWithEmailAndPassword(email, password)
     })
     .catch(error => {
       console.error('Error:', error);
-      alert('An unexpected error occurred. Please try again later.'); // Alert the user about unexpected error
+      // alert('An unexpected error occurred. Please try again later.'); // Alert the user about unexpected error
     });
   })
   .catch(err => {
