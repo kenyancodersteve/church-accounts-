@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Bar Graph with Labels</title>
+<style>
+    .chart {
+      padding: 2.5%;
+        width: 40vw;
+        height: 35vw;
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+        font-size: small;
+        
+    }
+h1{
+    position: absolute;
+    text-align: center;
+    color: crimson;
+    text-decoration: wavy;
+    top: 15vh;
+}
+    .bar {
+        flex: 1;
+        margin: 0 2px;
+        position: relative;
+    }
+
+    .bar::before {
+        content: attr(data-label);
+        position: absolute;
+        top: -7vh;
+        left: 0;
+    }
+     .gflex{
+        display: flex;
+     }
+    .percentage-label {
+        position: absolute;
+        top: -4vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+</style>
+</head>
+<body>
+
+    <div class="gflex">
+        <div class="chart" id="chart">
+        </div>
+        <div class="chart" id="chart2">
+        </div>
+    </div>
+
+
+<script>
+    function updateChart(values) {
+        const chart = document.getElementById('chart');
+        const chart2 = document.getElementById('chart2');
+        chart.innerHTML = ''; // Clear existing bars
+        chart2.innerHTML = ''; // Clear existing bars
+        chart.innerHTML = '<h1>Baraka monthly tythe bar graph </h1>';
+        chart2.innerHTML = '<h1>Baraka monthly tythe bar2 graph </h1>';
+        
+
+
+        for (let i = 0; i < values.length; i++) {
+            const bar = document.createElement('div');
+            const percentageLabel = document.createElement('div');
+            
+            bar.classList.add('bar');
+            bar.dataset.label =  (i + 1);
+            bar.style.height = values[i] + '%';
+            bar.style.backgroundColor = getRandomColor(); // Assign random color
+            chart.appendChild(bar);
+            chart2.appendChild(bar)
+
+            percentageLabel.classList.add('percentage-label');
+            percentageLabel.textContent = values[i] + '%';
+            bar.appendChild(percentageLabel);
+        }
+    }
+
+    // Function to generate random color
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    // Example usage:
+    const newValues = [10, 20, 30, 40, 35,10,30,19,20,17,28,29];
+    updateChart(newValues);
+</script>
+
+<%- include('footer') -%>
+

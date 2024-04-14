@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="res/css/style.css">
+<link rel="stylesheet" href="res/css/sign.css">
+<title>Login/Signup Form</title>
+<style>
+ 
+</style>
+</head>
+<body>
+
+<div class="fd">
+
+    <div id="loginForm">
+    <h5>Login</h5>
+
+        <form id="login" action="/login" method="POST">
+          <input type="email" name="email" placeholder="Email" required><br>
+          <input type="password" name="password" placeholder="Password" minlength="6" required><br>
+          <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" id="toggleForm">  <b> Signup</b></a></p>
+      </div>
+      
+      <div id="signupForm" style="display: none;">
+        <h5>Signup</h5>
+        <form id="signup" action="/signup" method="POST">
+            <input type="text" name="name" placeholder="Name" required><br>
+            <input type="number" name="number" placeholder="Member no" required><br>
+          <input type="phone" name="phone" placeholder="Phone" required><br>
+            <input type="email" name="email" placeholder="Email" required><br>
+          <input type="password" name="password" placeholder="Password" minlength="6" required><br>
+          <button type="submit">Signup</button>
+        </form>
+        <p>Already have an account? <a href="#" id="toggleForm2"> <b>Login </b></a></p>
+      </div>
+
+
+</div>
+
+
+
+<%- include('footer') -%>
+

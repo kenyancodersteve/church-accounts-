@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-generated Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: right;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <% data.forEach(section => { %>
+        <h2>Section</h2>
+        <table>
+            <thead>
+                <tr>
+                    <% section.column.forEach(col => { %>
+                        <th><%= col %></th>
+                    <% }) %>
+                </tr>
+            </thead>
+            <tbody>
+                <% section.body.forEach(row => { %>
+                    <tr>
+                        <% section.column.forEach(col => { %>
+                            <td><%= row[col] %></td>
+                        <% }) %>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% }) %>
+</body>
+</html>

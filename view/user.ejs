@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Page Website</title>
+
+<link rel="stylesheet" href="res/css/home.css">
+<link rel="stylesheet" href="res/css/user.css">
+
+</head>
+<body>
+  <!-- Navigation bar -->
+  <div class="navbar">
+    <!-- Logo on the left -->
+    <div class="logo">
+      <a href="vieww">
+        <img src="res/img/logo.png" alt="Logo">
+      </a>
+        <!-- Baraka -->
+    </div>
+    <!-- Links on the right -->
+    <div>
+      <a href="#" onclick="showPage(1)">Anouncements</a>
+      <a href="#" onclick="showPage(2)">Calender</a>
+      <a href="#" onclick="showPage(3)">Receipts</a>
+    </div>
+  </div>
+
+
+  <!-- Content divs -->
+  <div id="page1" class="content">
+    <h2>This weeks Anouncements</h2>
+    
+    <!-- Parent container with nested divs -->
+    <% adocuments.forEach(doc => { %>
+        <div class="container">
+            <!-- Left div with circle -->
+            <div class="circle"><%= doc.id %></div>
+            <!-- Right div with text -->
+            <div class="text">
+          <p> <%= doc.data %></p>
+            </div>
+          
+          </div>
+          <% }); %>
+  </div>
+
+  <div id="page2" class="content">
+    <h2>Years Planned Events</h2>
+    <!-- Parent container with nested divs -->
+    <% ddocuments.forEach(doc => { %>
+        <div class="container">
+            <!-- Left div with circle -->
+            <div class="circle"><%= doc.id %></div>
+            <!-- Right div with text -->
+            <div class="text">
+          <p> <%= doc.data %></p>
+            </div>
+          
+          </div>
+          <% }); %>
+
+
+  
+  </div>
+
+  <div id="page3" class="content">
+    <h2>Your Tithe Records</h2>
+   <!-- Parent container with nested divs -->
+   <% tdocuments.forEach(doc => { %>
+    <div class="container">
+        <!-- Left div with circle -->
+        <div class="circle"><%= doc.id %></div>
+        <!-- Right div with text -->
+        <div class="text">
+      <p> <%= doc.data %></p>
+        </div>
+      
+      </div>
+      <% }); %>
+  </div>
+
+  <div class="fd" id="h">
+
+    <h4>Welcome you have succecifully logged in </h4>
+
+    <p>You can now access the Anouncements of the week, the year calender events and your tythe records <br>
+       You can also book an appointment with the pastor click the button below</p>
+
+       <button type="submit"> <a href="sign" id="toggleForm">  book an appointment</a></button>
+
+</div>
+
+  <script>
+    // JavaScript function to toggle visibility of content divs
+    function showPage(pageNumber) {
+        var pages = document.getElementsByClassName('content');
+        var h = document.getElementById('h');
+        for (var i = 0; i < pages.length; i++) {
+        pages[i].style.display = 'none';
+      }
+      document.getElementById('h').style.display = 'none';
+      document.getElementById('page' + pageNumber).style.display = 'block';
+    }
+  </script>
+  <%- include('footer') -%>
+

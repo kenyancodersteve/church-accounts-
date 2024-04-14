@@ -1,0 +1,69 @@
+.record {
+    margin-bottom: 10px;
+    border-radius: 1vh;
+    padding: 1vh;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    font-family: cursive;
+    color: white;
+    background-color: #0d416d;
+}
+.record:hover {
+    background-color: #003666;
+    color: gold;
+}
+.record-data {
+    display: none;
+    background-color: antiquewhite;
+                  
+}
+.data-table {
+    border-collapse: collapse;
+    width: 78%;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    
+         }
+.data-table td {
+    padding: 8px;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+    color: black; 
+      border: 2.5px solid cornflowerblue;
+
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(176, 199, 241);
+}
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th:last-child,
+td:last-child {
+    text-align: right;
+    color: #ce187c;
+}
+  
+body{
+    background-color: cornflowerblue;
+}
+@media screen and (max-width: 600px) {
+    .box-container {
+        flex-direction: column;
+    }
+
+    .box {
+        flex: 0 1 calc(100% - 20px);
+    }
+    .data-table {
+        border-collapse: collapse;
+        width: 100%;
+             }
+}

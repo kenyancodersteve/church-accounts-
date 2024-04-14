@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Page Website</title>
+
+<link rel="stylesheet" href="res/css/home.css">
+<link rel="stylesheet" href="res/css/user.css">
+<style>
+  
+  table {
+    border-collapse: collapse;
+    text-align: end;
+}
+tr{
+border-bottom: 1px solid #ccc;
+
+}
+tr:hover{
+  background-color: rgba(0, 0, 255, 0.5);
+}
+th, td {
+    padding: 1.5vw;
+
+}
+th {
+    font-weight: bold;
+    color:chartreuse;
+}
+.cen{
+  overflow: hidden;
+  width: fit-content;
+  font-size: medium;
+  padding-bottom: 1.5vh;
+  border: 1px solid #ccc; /* Add a border to the table container */
+  max-width: 100%; /* Set the maximum width for the table container */
+  margin: 20px auto; /* Center the table container horizontally */
+  padding: 10px; /* Add padding to the table container */
+  overflow-x: auto;
+}
+.highlight {
+    font-weight: bold;
+    color:chartreuse;
+      }
+.highlight-column {
+    font-weight: normal;
+    text-align: end;
+}
+/* Select the last table row */
+table tr:last-child td:nth-child(3) {
+/* Your styling here */
+/* For example: */
+
+font-weight: bold;
+color:chartreuse;
+}
+table tr:last-child:hover {
+  background-color: black;
+  /* Change to desired color */
+  border: 2px solid goldenrod; /* Change to desired border color and width */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    color:chartreuse;
+}
+
+</style>
+</head>
+<body>
+  <!-- Navigation bar -->
+  <div class="navbar">
+    <!-- Logo on the left -->
+    <div class="logo">
+      <a href="vieww">
+        <img src="res/img/logo.png" alt="Logo">
+      </a>
+        <!-- Baraka -->
+    </div>
+    <!-- Links on the right -->
+    <div>
+      <a href="#" onclick="showPage(1)">Weekly</a>
+      <a href="#" onclick="showPage(2)">Monthly</a>
+      <a href="#" onclick="showPage(3)">Anual</a>
+    </div>
+  </div>
+
+
+  <!-- Content divs -->
+  <div id="page1" class="content">
+    <h2>Weekly Summary Reports </h2>
+    <!-- Parent container with nested divs -->
+   
+  
+    
+        <%
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { month: 'short', day: '2-digit' };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        Object.keys(dat).forEach(function(date) {         
+          %>
+             <h2><%= date %></h2>
+             <% dat[date].forEach(function(document) { %>
+
+              <div class="container">
+
+                
+                <div class="circle"> <%= formatDate(document.id) %></div>
+
+              <div class="text">
+             
+          <table>
+            <% document.t.forEach((row, rowIndex) => { %>
+              
+               
+                  <tr>
+                      <% row.forEach((cell, cellIndex) => { %>
+                          <% if(rowIndex === 0 || cellIndex === 0) { %>
+                              <th class="highlight">
+                              <%= cell %></th>
+                          <% } else { %>
+                              <td class="highlight-column"><%= cell %></td>
+                          <% } %>
+                      <% }) %>
+                  </tr>
+                  <% }) %>
+
+          </table>
+
+    </div>
+
+  </div>   
+  <% }) %>
+
+      <% }) %>
+        
+      </div>
+
+
+  <div id="page2" class="content">
+    <h2>Monthly Summary Reports </h2>
+
+    <% combinedArry.forEach(item => { %>
+      <h2><%= item.month %></h2>
+      <div class="cen container">
+        <!-- <div class="circle"> <%= formatDate(item.month) %></div> -->
+
+        <div class="text">
+      <table>
+      <thead>
+        <tr>
+          <% for (let i = 0; i < item.combinedArray.length; i++) { %>
+                    <th><%= item.combinedArray[i][0] %></th>     
+                    <% }; %>                      
+                </tr>
+      </thead>
+      <tbody>
+       
+      
+        <% for (let i = 1; i < item.combinedArray[1].length; i++) { %>
+         <tr>
+            <% for (let y = 0; y < item.combinedArray.length ; y++) { %>
+              
+              <td><%= item.combinedArray[y][i] %></td>     
+  
+              <% }; %>                          
+            </tr>
+          <% }; %>
+         
+      </tbody>
+  </table>
+  
+    
+  </div>
+</div>
+  <% }); %>
+    
+
+      
+    
+  </div>
+
+  <div id="page3" class="content">
+    <h2>Anual Summary Reports </h2>
+   <!-- Parent container with nested divs -->
+  </div>
+
+  <div class="fd" id="h">
+
+    <h4>Welcome Sir you have succecifully logged in </h4>
+
+    <p>You can now access the finance weekly, montly and anual records <br>
+       check the sunday input record </p>
+
+       <button type="submit"> <a href="getdata" id="toggleForm"> sunday reports </a></button>
+
+       </div>
+
+
+
+  <script>
+    // JavaScript function to toggle visibility of content divs
+    function showPage(pageNumber) {
+        var pages = document.getElementsByClassName('content');
+        var h = document.getElementById('h');
+        for (var i = 0; i < pages.length; i++) {
+        pages[i].style.display = 'none';
+      }
+      document.getElementById('h').style.display = 'none';
+      document.getElementById('page' + pageNumber).style.display = 'block';
+    }
+  </script>
+  <%- include('footer') -%>
+

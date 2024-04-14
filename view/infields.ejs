@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baraka</title>
+    <link rel="stylesheet" href="res/css/style.css">
+</head>
+<body>
+    
+    <div class="sidebar">
+        <button class="button" onclick="toggleOverlay(1)">M-pesa Tythe</button>
+        <button class="button" onclick="toggleOverlay(2)">M-pesa giving</button>
+        <button class="button" onclick="toggleOverlay(3)">Cash Tythe</button>
+        <button class="button" onclick="toggleOverlay(4)">Cash giving</button>
+        <button class="button" onclick="toggleOverlay(7)">Expenceis</button>
+        <button class="button" onclick="toggleOverlay(6)">cashiers</button>
+        <button class="button" onclick="toggleOverlay(5)">Receipt</button>
+      </div>
+
+      <div class="overlay-container">
+        <div class="overlay" id="overlay1">
+        
+          <h5> M-pesa Tythe </h5>
+      
+          <div class="container" id="container0">
+          
+            <div class="row">
+                <div class="cell"><input type="text" placeholder="Mpesa Code"></div>
+                <div class="cell"><input type="phone" placeholder="Phone Number"></div>
+                <div class="cell"><input type="text" placeholder="Members No"></div>
+                <div class="cell"><input type="number" placeholder="Amount"></div>
+                <div class="cell"><button class="remove-row-button" onclick="removeRow(this, 'container0')">Remove</button></div>
+            </div>
+            <div class="button">
+                <button class="add-row-button" onclick="addRow('container0')">Add Row</button>
+                <button class="submit-button" onclick="submitData('container0')">Submit</button>
+            </div>
+        
+            <div class="result"></div>
+        </div>
+     </div>
+     
+
+        <div class="overlay" id="overlay2">
+          <h5>  M-pesa giving</h5>
+          
+          <div class="container" id="container1">
+          
+            <div class="row">            
+              <div class="cell"><input type="text" value="Thanks giving"></div>
+              <div class="cell"><input type="number" placeholder="Amount"></div>
+              <div class="cell"><button class="remove-row-button" onclick="removeRow(this, 'container1')">Remove</button></div>
+          </div>
+          <div class="row">
+            
+            <div class="cell"><input type="text" value="Offering"></div>
+            <div class="cell"><input type="number" placeholder="Amount"></div>
+            <div class="cell"><button class="remove-row-button" onclick="removeRow(this, 'container1')">Remove</button></div>
+        </div>
+          <div class="row">
+            
+            <div class="cell"><input type="text" value="First Fruit"></div>
+            <div class="cell"><input type="number" placeholder="Amount"></div>
+            <div class="cell"><button class="remove-row-button" onclick="removeRow(this, 'container1')">Remove</button></div>
+        </div>
+     
+            <div class="button">
+                <button class="add-row-button" onclick="addRow('container1')">Add Row</button>
+                <button class="submit-button" onclick="submitData('container1')">Submit</button>
+            </div>
+        
+            <div class="result"></div>
+        </div>
+  
+        </div>
+
+
+        <div class="overlay" id="overlay3">
+          <h5> Cash Tythe</h5>
+          <div class="container" id="container2">
+       
+            <div class="row">
+      
+                <div class="cell"><input type="text" placeholder="Members No / Name"></div>
+                <div class="cell"><input type="number" placeholder="Amount"></div>
+                <div class="cell"><button class="remove-row-button" onclick="removeRow(this, 'container2')">Remove</button></div>
+            </div>
+            <div class="button">
+                <button class="add-row-button" onclick="addRow('container2')">Add Row</button>
+                <button class="submit-button" onclick="submitData('container2')">Submit</button>
+            </div>
+            <div class="result"></div>
+        </div>
+
+        </div>
+
+
+
+        <div class="overlay" id="overlay4">
+         
+          <h5>  Cash giving</h5>
+        
+          <div class="container" id="container3">
+                   
+          <div class="row">               
+            <div class="cell"><input type="text" value="Thanksgiving"></div>
+            <div class="cell"><input type="number" placeholder="Amount"></div>
+            <div class="cell"><button class="remove-row-button" onclick="removeRow(this, 'container3')">Remove</button></div>
+        </div>
+         
+        <div class="row">               
+          <div class="cell"><input type="text" value="Offering"></div>
+          <div class="cell"><input type="number" placeholder="Amount"></div>
+          <div class="cell"><button class="remove-row-button" onclick="removeRow(this, 'container3')">Remove</button></div>
+      </div>
+       
+      <div class="row">               
+        <div class="cell"><input type="text" value="First fruit"></div>
+        <div class="cell"><input type="number" placeholder="Amount"></div>
+        <div class="cell"><button class="remove-row-button" onclick="removeRow(this, 'container3')">Remove</button></div>
+    </div>
+     
+    <div class="row">               
+      <div class="cell"><input type="text" value="Junior Tas"></div>
+      <div class="cell"><input type="number" placeholder="Amount"></div>
+      <div class="cell"><button class="remove-row-button" onclick="removeRow(this, 'container3')">Remove</button></div>
+  </div>
+   
+  <div class="row">               
+    <div class="cell"><input type="text" value="Senior Tas"></div>
+    <div class="cell"><input type="number" placeholder="Amount"></div>
+    <div class="cell"><button class="remove-row-button" onclick="removeRow(this, 'container3')">Remove</button></div>
+</div>
+            <div class="button">
+                <button class="add-row-button" onclick="addRow('container3')">Add Row</button>
+                <button class="submit-button" onclick="submitData('container3')">Submit</button>
+            </div>
+            <div class="result"></div>
+        </div>
+        </div>
+
+
+        <div class="overlay" id="overlay7">
+        
+          <h5> Expensies </h5>
+      
+          <div class="container" id="container7">
+          
+            <div class="row">
+                <div class="cell"><input type="text" placeholder="Expence"></div>
+                <div class="cell"><input type="text" placeholder="Reciept Code"></div>
+                <div class="cell"><input type="phone" placeholder="Phone "></div>
+                <div class="cell"><input type="number" placeholder="Amount"></div>
+                <div class="cell"><button class="remove-row-button" onclick="removeRow(this, 'container7')">Remove</button></div>
+            </div>
+            <div class="button">
+                <button class="add-row-button" onclick="addRow('container7')">Add Row</button>
+                <button class="submit-button" onclick="submitData('container7')">Submit</button>
+            </div>
+        
+            <div class="result"></div>
+        </div>
+     </div>
+     
+        <div class="overlay" id="overlay6">
+       
+         
+          <h5>  Cashiers incharge</h5>
+        
+          <div class="container" id="container4">
+          
+            <div class="row">
+                <div class="cell"><input type="text" placeholder="Name"></div>
+                <div class="cell"><input type="phone" placeholder="Phone Number"></div>
+              
+                <div class="cell"><button class="remove-row-button" onclick="removeRow(this, 'container4')">Remove</button></div>
+            </div>
+            <div class="button">
+                <button class="add-row-button" onclick="addRow('container4')">Add Row</button>
+                <button class="submit-button" onclick="submitData('container4')">Submit</button>
+            </div>
+            <div class="result"></div>
+        </div>
+
+        </div>
+     
+        <div class="overlay" id="overlay5">
+          <h5>Autogenerated Receipt </h5>
+          <h5> <button id="downloadButton">Download Reciept Content</button></h5>
+                 <div class="tresult" id="mtres">
+          </div>
+        
+          <div class="tresult" id="mgres">
+
+          </div>
+      
+          <div class="tresult" id="ctres">
+
+          </div>          
+                   
+          <div class="tresult" id="cgres">
+        
+          </div>
+           <div class="tresult" id="exe">
+        
+          </div>
+         
+          <div class="tresult" id="cashier">
+          </div>
+          
+          <div class="tresult" id="sresult">
+        
+
+          </div>
+          <div id="output"></div>
+  <button id="saveButton" style="background-color: red; color:antiquewhite; padding:1vh;">Save as Text File</button>
+
+        </div>
+
+       
+
+      </div>
+      
+      <%- include('footer') -%>
+

@@ -1,0 +1,222 @@
+.sidebar {
+    width: 200px;
+    height: 100%;
+    background-color: #005f6b;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 1.5vw;
+  }
+  h5{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #008CBA;
+    color: antiquewhite;
+    padding: 1.5vh;
+    text-align: center;
+    background-image: linear-gradient(to bottom right, #12bdf6, #ce187c);
+   
+  }
+  h4{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: linear-gradient( hsl(161, 87%, 18%),rgb(7, 62, 94),hsl(309, 88%, 38%) );
+    /* background-color: #005f6b; */
+    font-size:.65em;
+    padding: 1.5vh;
+    color: antiquewhite;
+
+  }
+  .button {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .overlay-container {
+
+    position: absolute;
+    top: 0;
+    left: 200px;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+  }
+  
+  .overlay {
+    padding: 1.5vw;
+    display: none;
+    position: relative;
+
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding: 1.5vw;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.cell {
+    flex-grow: 1;
+    flex-basis: calc(20% - 2px);
+    padding: 5px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.cell:last-child {
+    border-right: none;
+}
+
+input[type="text"] {
+    border-style: none;
+    width: 100%;
+    outline: none; 
+}
+input[type="number"], input[type="phone"]{
+    border-style: none;
+    width: 100%;
+    outline: none; 
+}
+input[type="number"]{
+text-align: end;
+}
+.header {
+    font-weight: bold;
+}
+
+.add-row-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-row-button:hover {
+    background-color: #45a049;
+}
+
+.remove-row-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-row-button:hover {
+    background-color: #da190b;
+}
+
+.submit-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#sresult{
+   font-weight: bold;
+   color: #04235d;
+
+}
+b{
+    color: #585006;
+}
+.submit-button:hover {
+    background-color: #005f6b;
+}
+
+.result {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.box-container {
+    display: flex;
+  font-size: normal;
+  color: #04235d;
+  font-weight:450;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  flex-direction: row;
+
+}
+.T, .n{
+  font-size: large;
+    color:  #1e9fa3;
+    text-align: end;
+
+}
+.n{
+    color: #ce187c;
+    font-weight: bold;
+}
+.e{
+    background-color: rgb(3, 30, 57);
+    color:darkorange;
+    font-weight: bold;
+}
+.c{
+    color: antiquewhite;
+}
+.box {
+    flex: 0 1 calc(25% - 20px); /* Adjust as needed */
+    margin: 2.5px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+@media screen and (max-width: 600px) {
+    .box-container {
+        flex-direction: column;
+    }
+
+    .box {
+        flex: 0 1 calc(100% - 20px);
+    }
+  
+}
+
+@media only screen and (max-width: 600px) {
+    .row {
+        flex-direction: column;
+    }
+    .cell {
+        flex-basis: 100%;
+        border-right: none;
+    }
+    .cell:not(:last-child) {
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+  /* Media Query for responsiveness */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100px;
+    }
+    
+    .overlay-container {
+      left: 100px;
+    }
+  }
+  
