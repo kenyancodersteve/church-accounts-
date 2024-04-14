@@ -1,7 +1,7 @@
 
 var permittedUrls = [
-  "baraka.onrender.com/",
-  "baraka.onrender.com/sign"
+  "https://baraka.onrender.com/",
+  "https://baraka.onrender.com/sign"
 ];
 
 window.onload = function() {
@@ -9,7 +9,7 @@ window.onload = function() {
     if (!user) {
       var currentUrl = window.location.href;
       if (!permittedUrls.includes(currentUrl)) {
-        window.location.href = "baraka.onrender.com/"; // Redirect to home if URL not permitted
+        window.location.href = "https://baraka.onrender.com/"; // Redirect to home if URL not permitted
       }
     }
   });
