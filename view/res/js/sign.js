@@ -62,11 +62,13 @@ auth.signInWithEmailAndPassword(email, password)
   .then((cred) => {
     // Handle successful login
     console.log('LOGIN WAS A SUCCESS ', cred);
-     alert('Login successful. Welcome to Baraka App.'); // Alert the user about login failure
-    if(email=='stephenndungu96@gmail.com'){
-      window.location.href = "https://baraka.onrender.com/tres"; 
-    }
-window.location.href = "https://baraka.onrender.com/user"; // Redirect to home if URL not permitted   
+    alert('Login successful. Welcome to Baraka App.'); // Alert the user about login success
+    
+    // Check if the user is admin (example condition)
+    if (cred.user.email === 'stephenndungu96@gmail.com') {
+      window.location.href = "https://baraka.onrender.com/tres"; // Redirect to admin page
+    } else {
+      window.location.href = "https://baraka.onrender.com/user"; // Redirect to user page 
     // Make another HTTP request after successful login
     // fetch('auth/login', {
     //   method: 'POST',
