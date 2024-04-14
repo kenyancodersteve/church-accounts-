@@ -68,27 +68,27 @@ auth.signInWithEmailAndPassword(email, password)
     }
 window.location.href = "https://baraka.onrender.com/user"; // Redirect to home if URL not permitted   
     // Make another HTTP request after successful login
-    fetch('auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestData)
-    })
-    .then(response => {
-      if (response.ok) {
-        // Handle successful login
-        console.log('Login successful');
-      } else {
-        // Handle login failure
-        console.error('Login failed');
-        alert('Login failed. Please try again later.'); // Alert the user about login failure
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      // alert('An unexpected error occurred. Please try again later.'); // Alert the user about unexpected error
-    });
+    // fetch('auth/login', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(requestData)
+    // })
+    // .then(response => {
+    //   if (response.ok) {
+    //     // Handle successful login
+    //     console.log('Login successful');
+    //   } else {
+    //     // Handle login failure
+    //     console.error('Login failed');
+    //     alert('Login failed. Please try again later.'); // Alert the user about login failure
+    //   }
+    // })
+    // .catch(error => {
+    //   console.error('Error:', error);
+    //   // alert('An unexpected error occurred. Please try again later.'); // Alert the user about unexpected error
+    // });
   })
   .catch(err => {
     // Handle login failure
