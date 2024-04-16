@@ -511,7 +511,7 @@ var si = [['Baraka church Receipt as of',currentDate]]
     
     // Combine arrays into a single object to send to the backend
     const data = {
-        si,ampty,simt,acaty,sict,si,acaoth,sico,ampot,simo,sic,cashiersI,additionalTable,si
+si,ampty,simt,acaty,sict,si,acaoth,sico,ampot,simo,sic,cashiersI,sie,expence,sit,additionalTable,rt,si
     };
     
     // Make a fetch request to your backend API
