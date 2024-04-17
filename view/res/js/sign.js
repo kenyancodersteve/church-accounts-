@@ -20,12 +20,16 @@ var permittedUrls = [
 
 // Add listener for authentication state changes
 auth.onAuthStateChanged(user => {
-    if (user) {
+    const loggedInPage = 'https://baraka.onrender.com/user';
+    const loggedOutPage = 'https://baraka.onrender.com/sign';
+    
+    // Check if the user is already on the logged-in page
+    if (user && window.location.href !== loggedInPage) {
         // User is signed in, redirect to a logged-in page
-        window.location.href = 'https://baraka.onrender.com/user';
-    } else {
+        window.location.href = loggedInPage;
+    } else if (!user && window.location.href !== loggedOutPage) {
         // User is signed out, redirect to a logged-out page
-        window.location.href = 'https://baraka.onrender.com/sign';
+        window.location.href = loggedOutPage;
     }
 });
 
