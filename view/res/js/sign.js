@@ -134,6 +134,13 @@ auth.onAuthStateChanged(user => {
                     // Handle successful login
                     alert("Login in successful")
                     console.log('Login successful');
+                    if(response.tr.tres == "tres"){
+                      alert("welcome sir")
+                        window.location.href = 'https://baraka.onrender.com';
+                    }else{
+                      alert("welcome")
+                      window.location.href = 'https://baraka.onrender.com';
+                    }
                   } else {
                     // Handle login failure
                     console.error('Login failed');
