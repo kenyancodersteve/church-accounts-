@@ -1,20 +1,19 @@
-
-var permittedUrls = [
+const permittedUrls = new Set([
   "https://baraka.onrender.com/",
   "https://baraka.onrender.com/sign"
-];
+]);
 
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
   auth.onAuthStateChanged(user => {
     if (!user) {
       var currentUrl = window.location.href;
-      if (!permittedUrls.includes(currentUrl)) {
+      if (!permittedUrls.has(currentUrl)) {
         window.location.href = "https://baraka.onrender.com/"; // Redirect to home if URL not permitted
       }
     }
   });
   console.log("Page loaded");
-};
+});
 
 
 
