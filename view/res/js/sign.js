@@ -70,11 +70,7 @@ auth.signInWithEmailAndPassword(email, password)
     console.log('LOGIN WAS A SUCCESS ', cred);
     alert('Login successful. Welcome to Baraka App.'); // Alert the user about login success  
 
-    
-    const suv = []
-   const e = {
-     e:suv
-   }
+  
     // Access user data after authentication
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -95,7 +91,6 @@ firebase.auth().onAuthStateChanged((user) => {
           
           
           // Access other user data fields as needed
-          suv.push(userData)
                     
             fetch('auth/login', {
                 method: 'POST',
