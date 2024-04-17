@@ -1,4 +1,4 @@
-if( window.location.href = 'https://baraka.onrender.com/';){
+if( window.location.href = 'https://baraka.onrender.com/'){
   alert(" Welcome to Baraka App")
 }else if( window.location.href = 'https://baraka.onrender.com/sign';){
   alert(" If you dont have an account create one else login to enjoy our servicies ")  
