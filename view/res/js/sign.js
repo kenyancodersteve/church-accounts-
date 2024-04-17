@@ -16,7 +16,19 @@ auth.onAuthStateChanged(user => {
 }
 
 
-
+// Function to handle logout
+function logout() {
+    // Firebase logout functionality
+    auth.signOut().then(() => {
+        // Logout successful
+        alert('You have been logged out.');
+        // Redirect to the login page
+        window.location.href = 'login.html';
+    }).catch((error) => {
+        // An error occurred
+        console.error('Logout error:', error);
+    });
+}
 // Add event listener to the logout button
 document.getElementById('logoutBtn').addEventListener('click', function() {
     // Firebase logout functionality
