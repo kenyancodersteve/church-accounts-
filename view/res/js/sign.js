@@ -1,29 +1,35 @@
-const permittedUrls = new Set([
-  "https://baraka.onrender.com/",
-  "https://baraka.onrender.com/sign"
-]);
-
-document.addEventListener("DOMContentLoaded", function() {
-  auth.onAuthStateChanged(user => {
-    if (!user) {
-      var currentUrl = window.location.href;
-      if (!permittedUrls.has(currentUrl)) {
-        window.location.href = "https://baraka.onrender.com/"; // Redirect to home if URL not permitted
-      }
+if( window.location.href = 'https://baraka.onrender.com/';){
+  alert(" Welcome to Baraka App")
+}else if( window.location.href = 'https://baraka.onrender.com/sign';){
+  alert(" If you dont have an account create one else login to enjoy our servicies ")  
+}else{
+  // Add listener for authentication state changes
+auth.onAuthStateChanged(user => {
+    if (user) {
+        // User is signed in, redirect to a logged-in page
+        window.location.href = 'loggedin.html';
+    } else {
+        // User is signed out, redirect to a logged-out page
+        window.location.href = 'login.html';
     }
-  });
-  console.log("Page loaded");
 });
+}
 
-document.getElementById('logoutBtno').addEventListener('click', function() {
-    // Perform logout functionality here, such as redirecting to a logout endpoint or clearing session data.
-    // For demonstration purposes, let's just alert that the user is logged out.
-    alert('You have been logged out.');
-    // You might also want to redirect the user to a login page after logging them out.
-    window.location.href = 'login.html';
+
+
+// Add event listener to the logout button
+document.getElementById('logoutBtn').addEventListener('click', function() {
+    // Firebase logout functionality
+    auth.signOut().then(() => {
+        // Logout successful
+        alert('You have been logged out.');
+        // Redirect to a logged-out page
+        window.location.href = 'login.html';
+    }).catch((error) => {
+        // An error occurred
+        console.error('Logout error:', error);
+    });
 });
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const loginForm = document.getElementById("loginForm");
     const signupForm = document.getElementById("signupForm");
