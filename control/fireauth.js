@@ -51,16 +51,20 @@ const login =  async (req, res) => {
     // console.log(email,password)
     //     // Attempt to sign in the user
     // // const userCredential = await admin.auth().signInWithEmailAndPassword(email, password);
-    if(email == 'treasurer@gmail.com'){
-      res.redirect('tres')
+    if(email == 'stephenndungu96@gmail.com'){
+      tr = {
+        tres:'tres'
+      }
+      res.send(tr)
       
     }else{
-      res.redirect('user')
+         trr = {
+        tres:'tres'
+      }
+      res.send(trr)
 
     }
 
-    console.log('Login successful');
-    res.status(200).json({ message: 'Login successful', user: userCredential.user });
   } catch (error) {
     console.error('Error signing in:', error);
     if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
