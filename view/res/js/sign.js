@@ -55,14 +55,14 @@ document.addEventListener("DOMContentLoaded", function() {
       event.preventDefault();     
 
       var form = document.getElementById("login");
-
+      
       const formData = new FormData(form);
       const requestData = Object.fromEntries(formData.entries());
       console.log(formData,'req',requestData)
       const email =requestData.email 
       const password =requestData.password
       console.log(email,password)
-      
+    
 // Attempt to log the user in
 auth.signInWithEmailAndPassword(email, password)
   .then((cred) => {
@@ -165,10 +165,6 @@ firebase.auth().onAuthStateChanged((user) => {
     .catch(error => {
         console.error('Error:', error);
     });
-    
-
-
-
     });
 
   
