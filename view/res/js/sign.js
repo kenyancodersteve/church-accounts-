@@ -1,19 +1,23 @@
-if( window.location.href = 'https://baraka.onrender.com/'){
-  alert(" Welcome to Baraka App")
-}else if( window.location.href = 'https://baraka.onrender.com/sign';){
-  alert(" If you dont have an account create one else login to enjoy our servicies ")  
-}else{
-  // Add listener for authentication state changes
-auth.onAuthStateChanged(user => {
-    if (user) {
-        // User is signed in, redirect to a logged-in page
-        window.location.href = 'loggedin.html';
+// Call this on page load
+window.onload = function() {
+    if (window.location.href === 'https://baraka.onrender.com/') {
+        alert("Welcome to Baraka App");
+    } else if (window.location.href === 'https://baraka.onrender.com/sign') {
+        alert("If you don't have an account, create one. Otherwise, log in to enjoy our services.");
     } else {
-        // User is signed out, redirect to a logged-out page
-        window.location.href = 'login.html';
+        // Add listener for authentication state changes
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                // User is signed in, redirect to a logged-in page
+                window.location.href = 'https://baraka.onrender.com/user';
+            } else {
+                // User is signed out, redirect to a logged-out page
+                window.location.href = 'https://baraka.onrender.com';
+            }
+        });
     }
-});
-}
+};
+
 
 
 // Function to handle logout
@@ -23,7 +27,7 @@ function logout() {
         // Logout successful
         alert('You have been logged out.');
         // Redirect to the login page
-        window.location.href = 'login.html';
+        window.location.href = 'https://baraka.onrender.com/sign';
     }).catch((error) => {
         // An error occurred
         console.error('Logout error:', error);
@@ -36,7 +40,7 @@ document.getElementById('logoutBtn').addEventListener('click', function() {
         // Logout successful
         alert('You have been logged out.');
         // Redirect to a logged-out page
-        window.location.href = 'login.html';
+        window.location.href = 'https://baraka.onrender.com';
     }).catch((error) => {
         // An error occurred
         console.error('Logout error:', error);
