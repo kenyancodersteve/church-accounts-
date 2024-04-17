@@ -31,9 +31,9 @@ auth.onAuthStateChanged(user => {
     } else if (!user && window.location.href !== loggedOutPage) {
         // User is signed out, redirect to a logged-out page
         window.location.href = loggedOutPage;
-    } else if (!user && window.location.href !== loggedOutPPage) {
+    } else if (!user && window.location.href !== loggedInPage) {
         // User is signed out, redirect to a logged-out page
-        window.location.href = loggedOutPPage;
+        window.location.href = loggedInPage;
     }
 });
 
