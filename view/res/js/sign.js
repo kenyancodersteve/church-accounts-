@@ -17,7 +17,18 @@ var permittedUrls = [
     console.log("Page loaded");
   };
   
-  
+
+// Add listener for authentication state changes
+auth.onAuthStateChanged(user => {
+    if (user) {
+        // User is signed in, redirect to a logged-in page
+        window.location.href = 'https://baraka.onrender.com/user';
+    } else {
+        // User is signed out, redirect to a logged-out page
+        window.location.href = 'https://baraka.onrender.com/sign';
+    }
+});
+
   
   window.onload = function() {
     auth.onAuthStateChanged(user => {
