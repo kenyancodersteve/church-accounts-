@@ -22,6 +22,7 @@ var permittedUrls = [
 auth.onAuthStateChanged(user => {
     const loggedInPage = 'https://baraka.onrender.com/user';
     const loggedOutPage = 'https://baraka.onrender.com/sign';
+    const loggedInPPage = 'https://baraka.onrender.com/'
     
     // Check if the user is already on the logged-in page
     if (user && window.location.href !== loggedInPage) {
@@ -30,45 +31,14 @@ auth.onAuthStateChanged(user => {
     } else if (!user && window.location.href !== loggedOutPage) {
         // User is signed out, redirect to a logged-out page
         window.location.href = loggedOutPage;
+    } else if (!user && window.location.href !== loggedOutPPage) {
+        // User is signed out, redirect to a logged-out page
+        window.location.href = loggedOutPPage;
     }
 });
 
   
-  window.onload = function() {
-    auth.onAuthStateChanged(user => {
-      if (!user) {
-        var currentUrl = window.location.href;
-        
-        if (!permittedUrls.has(currentUrl)) {
-          window.location.href = "https://baraka.onrender.com/"; // Redirect to home if URL not permitted
-        }
-      }
-    });
-    console.log("Page loaded");
-  };
-  
-  
-  
-  
-  
-  // Call this on page load
  
-  
-  
-  
-  // Function to handle logout
-  function logout() {
-      // Firebase logout functionality
-      auth.signOut().then(() => {
-          // Logout successful
-          alert('You have been logged out.');
-          // Redirect to the login page
-          window.location.href = 'https://baraka.onrender.com/sign';
-      }).catch((error) => {
-          // An error occurred
-          console.error('Logout error:', error);
-      });
-  }
   
   // Function to handle form submission (logout)
   function handleFormSubmission(event) {
