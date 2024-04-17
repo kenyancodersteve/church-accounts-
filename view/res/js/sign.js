@@ -20,7 +20,7 @@ document.getElementById('logoutBtn').addEventListener('click', function() {
     // For demonstration purposes, let's just alert that the user is logged out.
     alert('You have been logged out.');
     // You might also want to redirect the user to a login page after logging them out.
-    // window.location.href = 'login.html';
+    window.location.href = 'login.html';
 });
 
 
