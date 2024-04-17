@@ -1,21 +1,4 @@
-var permittedUrls = [
-    "https://baraka.onrender.com/",
-    "https://baraka.onrender.com/sign"
-  ];
-  
-  window.onload = function() {
-    auth.onAuthStateChanged(user => {
-      if (!user) {
-        var currentUrl = window.location.href;
-         alert('You have been logged in.');
-        if (!permittedUrls.includes(currentUrl)) {
-           alert('You are logged out.');
-          window.location.href = "https://baraka.onrender.com/"; // Redirect to home if URL not permitted
-        }
-      }
-    });
-    console.log("Page loaded");
-  };
+
   
 
 // Add listener for authentication state changes
