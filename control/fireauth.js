@@ -52,14 +52,14 @@ const login =  async (req, res) => {
     //     // Attempt to sign in the user
     // // const userCredential = await admin.auth().signInWithEmailAndPassword(email, password);
     if(email == 'stephenndungu96@gmail.com'){
-      tr = {
+     const tr = {
         tres:'tres'
       }
       res.send(tr)
       
     }else{
-         trr = {
-        tres:'tres'
+         const trr = {
+        tres:'user'
       }
       res.send(trr)
 
