@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log("Page loaded");
 });
 
-document.getElementById('logoutBtn').addEventListener('click', function() {
+document.getElementById('logoutBtno').addEventListener('click', function() {
     // Perform logout functionality here, such as redirecting to a logout endpoint or clearing session data.
     // For demonstration purposes, let's just alert that the user is logged out.
     alert('You have been logged out.');
