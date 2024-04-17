@@ -7,7 +7,9 @@ window.onload = function() {
   auth.onAuthStateChanged(user => {
     if (!user) {
       var currentUrl = window.location.href;
+       alert('You have been logged in.');
       if (!permittedUrls.includes(currentUrl)) {
+         alert('You are logged out.');
         window.location.href = "https://baraka.onrender.com/"; // Redirect to home if URL not permitted
       }
     }
@@ -24,6 +26,7 @@ window.onload = function() {
   auth.onAuthStateChanged(user => {
     if (!user) {
       var currentUrl = window.location.href;
+      
       if (!permittedUrls.has(currentUrl)) {
         window.location.href = "https://baraka.onrender.com/"; // Redirect to home if URL not permitted
       }
