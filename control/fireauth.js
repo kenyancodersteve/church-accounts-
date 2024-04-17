@@ -58,7 +58,7 @@ const login =  async (req, res) => {
       res.send(tr)
       
     }else{
-         const trr = {
+         tr = {
         tres:'user'
       }
       res.send(trr)
