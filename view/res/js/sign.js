@@ -33,6 +33,22 @@ function logout() {
         console.error('Logout error:', error);
     });
 }
+
+// Function to handle form submission (logout)
+function handleFormSubmission(event) {
+    event.preventDefault(); // Prevent the default form submission
+    // Firebase logout functionality
+    auth.signOut().then(() => {
+        // Logout successful
+        alert('You have been logged out.');
+        // Redirect to the login page
+        window.location.href = 'login.html';
+    }).catch((error) => {
+        // An error occurred
+        console.error('Logout error:', error);
+    });
+}
+
 // Add event listener to the logout button
 document.getElementById('logoutBtn').addEventListener('click', function() {
     // Firebase logout functionality
