@@ -1,3 +1,26 @@
+
+
+const permittedUrls = new Set([
+  "https://baraka.onrender.com/",
+  "https://baraka.onrender.com/sign"
+]);
+
+window.onload = function() {
+  auth.onAuthStateChanged(user => {
+    if (!user) {
+      var currentUrl = window.location.href;
+      if (!permittedUrls.has(currentUrl)) {
+        window.location.href = "https://baraka.onrender.com/"; // Redirect to home if URL not permitted
+      }
+    }
+  });
+  console.log("Page loaded");
+};
+
+
+
+
+
 // Call this on page load
 window.onload = function() {
     if (window.location.href === 'https://baraka.onrender.com/') {
@@ -42,7 +65,7 @@ function handleFormSubmission(event) {
         // Logout successful
         alert('You have been logged out.');
         // Redirect to the login page
-        window.location.href = 'login.html';
+        window.location.href = 'https://baraka.onrender.com';
     }).catch((error) => {
         // An error occurred
         console.error('Logout error:', error);
