@@ -17,10 +17,7 @@ window.onload = function() {
   console.log("Page loaded");
 };
 
-const permittedUrls = new Set([
-  "https://baraka.onrender.com/",
-  "https://baraka.onrender.com/sign"
-]);
+
 
 window.onload = function() {
   auth.onAuthStateChanged(user => {
