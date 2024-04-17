@@ -37,24 +37,7 @@ var permittedUrls = [
   
   
   // Call this on page load
-  window.onload = function() {
-      if (window.location.href === 'https://baraka.onrender.com/') {
-          alert("Welcome to Baraka App");
-      } else if (window.location.href === 'https://baraka.onrender.com/sign') {
-          alert("If you don't have an account, create one. Otherwise, log in to enjoy our services.");
-      } else {
-          // Add listener for authentication state changes
-          auth.onAuthStateChanged(user => {
-              if (user) {
-                  // User is signed in, redirect to a logged-in page
-                  window.location.href = 'https://baraka.onrender.com/user';
-              } else {
-                  // User is signed out, redirect to a logged-out page
-                  window.location.href = 'https://baraka.onrender.com';
-              }
-          });
-      }
-  };
+ 
   
   
   
