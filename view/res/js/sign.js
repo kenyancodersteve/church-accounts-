@@ -1,28 +1,33 @@
+
 // Add listener for authentication state changes
 auth.onAuthStateChanged(user => {
   const loggedInPage = 'https://baraka.onrender.com/user';
   const loggedOutPage = 'https://baraka.onrender.com/sign';
   const homePage = 'https://baraka.onrender.com/';
   const tres = 'https://baraka.onrender.com/tres';
-  const adminEmail = 'stephenndungu96@gmail.com'; // Define admin email here
+  const tresEmail = 'stephenndungu96@gmail.com'; // Define tres email here
 
-  // Check if the user is already on the admin dashboard page
-  if (user && user.email === adminEmail && window.location.href === tres) {
-    return; // If already on the admin dashboard, do nothing
-  }
-
-  if (user && user.email === adminEmail && window.location.href !== tres) {
-    // User is signed in with admin email, redirect to admin page
-    window.location.href = tres;
-  } else if (user && window.location.href !== loggedInPage) {
-    // User is signed in and not on the logged-in page, redirect to the logged-in page
-    window.location.href = loggedInPage;
-  } else if (!user && window.location.href !== loggedOutPage && window.location.href !== homePage) {
-    // User is signed out and not on the logged-out page or home page, redirect to the logged-out page
-    window.location.href = loggedOutPage;
+  // Check if the user is logged in
+  if (user) {
+    // Check if the user is the tres
+    if (user.email === tresEmail) {
+      // tres user is signed in, redirect to tres page
+      if (window.location.href !== tres) {
+        window.location.href = tres;
+      }
+    } else {
+      // Non-tres user is signed in, redirect to logged-in page if not already there
+      if (window.location.href !== loggedInPage) {
+        window.location.href = loggedInPage;
+      }
+    }
+  } else {
+    // User is signed out, redirect to logged-out page if not already there
+    if (window.location.href !== loggedOutPage && window.location.href !== homePage) {
+      window.location.href = loggedOutPage;
+    }
   }
 });
-
 
 // Function to handle form submission (logout)
 function handleFormSubmission(event) {
