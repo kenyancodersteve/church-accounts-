@@ -3,16 +3,17 @@
 
 // Add listener for authentication state changes
 
+// Add listener for authentication state changes
 auth.onAuthStateChanged(user => {
   const loggedInPage = 'https://baraka.onrender.com/user';
   const loggedOutPage = 'https://baraka.onrender.com/sign';
   const homePage = 'https://baraka.onrender.com/';
-  const tres = 'https://baraka.onrender.com/tres';
+  const ADMIN = 'https://baraka.onrender.com/tres';
   const adminEmail = 'stephenndungu96@gmail.com'; // Define admin email here
 
-  if (user && user.email === adminEmail) {
+  if (user && user.email === adminEmail  && window.location.href !== loggedInPage) {
     // User is signed in with admin email, redirect to admin page
-    window.location.href = tres;
+    window.location.href = ADMIN;
   } else if (user && window.location.href !== loggedInPage) {
     // User is signed in and not on the logged-in page, redirect to the logged-in page
     window.location.href = loggedInPage;
