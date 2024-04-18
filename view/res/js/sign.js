@@ -8,7 +8,7 @@ auth.onAuthStateChanged(user => {
   const loggedOutPage = 'https://baraka.onrender.com/sign';
   const homePage = 'https://baraka.onrender.com/';
   const tres = 'https://baraka.onrender.com/tres';
-  const adminEmail = 'adminemail@gmail.com'; // Define admin email here
+  const adminEmail = 'stephenndungu96@gmail.com'; // Define admin email here
 
   if (user && user.email === adminEmail) {
     // User is signed in with admin email, redirect to admin page
