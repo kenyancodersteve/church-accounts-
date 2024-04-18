@@ -76,11 +76,12 @@ document.addEventListener("DOMContentLoaded", function() {
       signupForm.style.display = "block";
     }
   })
+});
 
 
   loginForm.addEventListener("submit", function(event) {
     event.preventDefault();     
-
+alert('successifully logged in')
     var form = document.getElementById("login");
     
     const formData = new FormData(form);
@@ -125,7 +126,6 @@ signupForm.addEventListener("submit", function(event) {
   .catch(error => {
       console.error('Error:', error);
   });
-});
 });
   
 
