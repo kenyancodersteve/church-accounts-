@@ -12,7 +12,7 @@ auth.onAuthStateChanged(user => {
     // Check if the user is the tres
     if (user.email === tresEmail) {
       // tres user is signed in, redirect to tres page
-      if (window.location.href !== tres) {
+      if (window.location.href === loggedOutPage) {
         window.location.href = tres;
       }
     } else {
