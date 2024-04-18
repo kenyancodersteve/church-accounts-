@@ -7,12 +7,12 @@ auth.onAuthStateChanged(user => {
   const loggedInPage = 'https://baraka.onrender.com/user';
   const loggedOutPage = 'https://baraka.onrender.com/sign';
   const homePage = 'https://baraka.onrender.com/';
-  const ADMIN = 'https://baraka.onrender.com/ADMIN';
+  const tres = 'https://baraka.onrender.com/tres';
   const adminEmail = 'adminemail@gmail.com'; // Define admin email here
 
   if (user && user.email === adminEmail) {
     // User is signed in with admin email, redirect to admin page
-    window.location.href = ADMIN;
+    window.location.href = tres;
   } else if (user && window.location.href !== loggedInPage) {
     // User is signed in and not on the logged-in page, redirect to the logged-in page
     window.location.href = loggedInPage;
