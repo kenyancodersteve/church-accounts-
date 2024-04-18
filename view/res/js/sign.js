@@ -35,26 +35,15 @@ function handleFormSubmission(event) {
     });
 }
 
-// Add event listener to the logout button
-document.getElementById('logoutBtn').addEventListener('click', function() {
-    // Firebase logout functionality
-    auth.signOut().then(() => {
-        // Logout successful
-        alert('You have been logged out.');
-        // Redirect to a logged-out page
-        window.location.href = 'https://baraka.onrender.com';
-    }).catch((error) => {
-        // An error occurred
-        console.error('Logout error:', error);
-    });
-});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  
   const loginForm = document.getElementById("loginForm");
   const signupForm = document.getElementById("signupForm");
   const toggleLink = document.getElementById("toggleForm");
   const toggleLink2 = document.getElementById("toggleForm2");
 
-document.addEventListener("DOMContentLoaded", function() {
-  
   toggleLink.addEventListener("click", function(event) {
     if (loginForm.style.display === "none") {
       loginForm.style.display = "block";
@@ -73,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
       signupForm.style.display = "block";
     }
   })
-});
+
 
 
   loginForm.addEventListener("submit", function(event) {
@@ -87,8 +76,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const email =requestData.email 
     const password =requestData.password
     console.log(email,password)
-
-    
           // Attempt to log the user in
 auth.signInWithEmailAndPassword(email, password)
 .then((cred) => {
@@ -202,21 +189,9 @@ signupForm.addEventListener("submit", function(event) {
 });
   
 
-
+});
    
 
-  document.getElementById('logoutBtno').addEventListener('click', function() {
-    // Firebase logout functionality
-    auth.signOut().then(() => {
-        // Sign-out successful.
-        alert('You have been logged out.');
-        // You might also want to redirect the user to a login page after logging them out.
-        // window.location.href = 'login.html';
-    }).catch((error) => {
-        // An error happened.
-        console.error('Logout error:', error);
-    });
-});
 
 
 
