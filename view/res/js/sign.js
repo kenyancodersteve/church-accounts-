@@ -87,6 +87,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const email =requestData.email 
     const password =requestData.password
     console.log(email,password)
+
+    
           // Attempt to log the user in
 auth.signInWithEmailAndPassword(email, password)
 .then((cred) => {
