@@ -15,19 +15,31 @@ const admin= require('./config')
 const db = admin.firestore()
 const ntpClient = require('ntp-client');
 
+// Declare date variable globally
+var date;
+
 // Function to get accurate current time
 function getCurrentTime(callback) {
-    ntpClient.getNetworkTime("pool.ntp.org", 123, function(err, date) {
+    ntpClient.getNetworkTime("pool.ntp.org", 123, function(err, currentTime) {
         if (err) {
             console.error(err);
             return;
         }
-        // Date object returned will be the accurate current time
-      return date 
-
+        // Assign currentTime to the global date variable
+        date = new Date(currentTime);
+        // Optionally, you can call any callback function here if needed
+        if (typeof callback === 'function') {
+            callback(date);
+        }
     });
 }
-   const currentDate = getCurrentTime();
+
+// Example usage
+getCurrentTime(function(currentTime) {
+    console.log("Current time:", date);
+});
+
+   const currentDate = date
 
 
 
