@@ -36,8 +36,9 @@ function getCurrentTime(callback) {
 
 // Example usage
 getCurrentTime(function(currentTime) {
-    console.log("Current time:", date);
+    console.log(date.toString());
 });
+
 
    const currentDate = date
 
