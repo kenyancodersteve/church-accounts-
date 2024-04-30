@@ -118,7 +118,7 @@ app.post('/data', (req, res) => {
   
   // Specify the collection and document where you want to create data
   const collectionRef = db.collection('data');
-  const documentRef = collectionRef.doc(`${currentDate}`);
+  const documentRef = collectionRef.doc(`${date}`);
   
   //otp store Create data in the document
   documentRef.set(encryptedResult)
